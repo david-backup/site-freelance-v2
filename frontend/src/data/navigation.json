@@ -1,15 +1,15 @@
 [
   {
-    "label": "Accueil",
-    "link": "/"
+    "label": "Services",
+    "link": "/services"
+  },
+  {
+    "label": "Tarif",
+    "link": "/tarif"
   },
   {
     "label": "A propos",
     "link": "/about"
-  },
-  {
-    "label": "Services",
-    "link": "/services"
   },
   {
     "label": "Contact",

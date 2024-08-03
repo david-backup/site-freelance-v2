@@ -1,0 +1,103 @@
+@import "../utils/mixins.scss";
+@import "../utils/variables.scss";
+
+header {
+  width: 100%;
+  height: 60px;
+
+  .navigation {
+    background-color: $secondary_color;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    height: 60px;
+    position: fixed;
+    opacity: 0.96;
+    z-index: 1000;
+    @media screen and (max-width: 768px) {
+      opacity: 1;
+    }
+    &_container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: inherit;
+      flex: 1;
+
+      &_logo {
+        @include inter;
+        text-decoration: none;
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        font-size: 1.5em;
+      }
+
+      &_menu {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        transition: all 500ms ease-out;
+        @media screen and (max-width: 768px) {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100vh;
+          position: absolute;
+          top: 60px;
+          left: -100%;
+          opacity: 0;
+          transition: left 500ms ease-out, opacity 500ms ease-out,
+            background-color 500ms ease-out;
+          gap: 40px;
+
+          &.active {
+            background-color: $secondary_color;
+            left: 0px;
+            opacity: 1;
+          }
+        }
+
+        &_item {
+          @include inter;
+          font-size: 1.2em;
+          font-weight: 400;
+          @media screen and (max-width: 768px) {
+            margin: 0px;
+            padding: 10px 0;
+            font-size: 1.8em;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 3px;
+            background-color: transparent;
+            border-radius: 2px;
+            transition: all 500ms ease;
+          }
+          &:hover::after {
+            width: 100%;
+            background-color: $primary100_color;
+          }
+          &_links {
+            text-decoration: none;
+            padding-bottom: 0.3em;
+          }
+        }
+      }
+    }
+  }
+  .menu_hamburger_icon {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: block;
+      cursor: pointer;
+      color: $primary100_color;
+    }
+  }
+}

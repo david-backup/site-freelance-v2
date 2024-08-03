@@ -20,7 +20,7 @@ const Header = () => {
       <nav className="navigation">
         <div className="navigation_container">
           <Link to="/" className="navigation_container_logo">
-            <h1>Portfolio</h1>
+            <h1>David Web Projects</h1>
           </Link>
         </div>
         <ul
