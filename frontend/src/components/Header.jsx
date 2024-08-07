@@ -37,6 +37,7 @@ const Header = () => {
               </Link>
             </li>
           ))}
+          <button className="button">Se connecter</button>
         </ul>
         <div className="menu_hamburger_icon" onClick={handleToggleIcon}>
           {toggleIcon ? <HiX size={40} /> : <FaBars size={40} />}
